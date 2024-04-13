@@ -39,7 +39,7 @@ connectDB();
 //   payment_id: String,
 // });
 
-// const msg = mongoose.model("ticketsdT", newSchemas);
+const msg = mongoose.model("ticketsdT", newSchemas);
 
 const app = express();
 const port = process.env.PORT || 5000;
