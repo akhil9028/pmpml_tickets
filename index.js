@@ -267,9 +267,13 @@ app.post("/passTicket.html", async (req, res) => {
     // const { payment_id, amount } = payload;
 
     const msssgdata = {
-      order_id: payload.payment.entity.order_id,
-      payment_id: payload.payment.entity.id,
-      amount: payload.payment.entity.amount / 100,
+      order_id: 7942793,
+      payment_id: 777777,
+      amount: 650,
+      tickets: 8,
+      // order_id: payload.payment.entity.order_id,
+      // payment_id: payload.payment.entity.id,
+      // amount: payload.payment.entity.amount / 100,
     };
     msg.create(msssgdata);
 
