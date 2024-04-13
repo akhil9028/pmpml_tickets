@@ -13,31 +13,29 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 require("dotenv").config();
-const connectDB = require("./config/db");
-connectDB();
+// const connectDB = require("./config/db");
+// connectDB();
 
-// mongoose
-//   .connect(
-//     "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.5",
-//     {
-//       dbName: "Razor_data",
-//     }
-//   )
-//   .then(() => console.log("Database Connected"))
-//   .catch((e) => console.log(e));
+mongoose
+  .connect(
+    "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.5",
+    {
+      dbName: "mongo_data",
+    }
+  )
+  .then(() => console.log("Database Connected"))
+  .catch((e) => console.log(e));
 
 // const msg = mongoose.model("Message", newSchema);
 
-// *** NEW SCHEMA
-
-// const newSchemas = new mongoose.Schema({
-//   // paymentId: String,
-//   // status: String,
-//   tickets: Number,
-//   amount: Number,
-//   order_id: String,
-//   payment_id: String,
-// });
+const newSchemas = new mongoose.Schema({
+  // paymentId: String,
+  // status: String,
+  tickets: Number,
+  amount: Number,
+  order_id: String,
+  payment_id: String,
+});
 
 const msg = mongoose.model("ticketsdT", newSchemas);
 
@@ -264,7 +262,7 @@ app.post("/passTicket.html", async (req, res) => {
   // function to handlePaymentCaptured
 
   async function handlePaymentCaptured(payload) {
-    // const { payment_id, amount } = payload;
+    const { payment_id, amount } = payload;
 
     const msssgdata = {
       order_id: 7942793,
