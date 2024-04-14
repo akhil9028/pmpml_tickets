@@ -7,3 +7,4 @@ const newSchemas = new mongoose.Schema({
 });
 
 module.exports = mongoose.model("User", newSchemas);
+
