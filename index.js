@@ -13,7 +13,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 require("dotenv").config();
-const connectDB = require("./config/db");
+const { connectDB } = require("./config/db");
+
 connectDB();
 
 // mongoose
